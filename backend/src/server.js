@@ -13,12 +13,14 @@ const port = 4000;
        .connect(process.env.MONGODB_URI)
        .then(() => console.log('connect to database mongodb'))
        .catch((err) =>
-         console.log('Error al conectar a la base de datos, error: ' + err)
+         console.log('Error to connect database, error: ' + err)
        );
 
        // middleware
+       server.use(express.json());
 
        server.use('/api/v2',usersRouter);
+       
 
          //rutas
 
