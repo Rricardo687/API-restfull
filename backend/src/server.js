@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require ('cors');
 const mongoose = require('mongoose');
 const dotenv =require('dotenv');
 const usersRouter = require('./routes/user');
@@ -17,6 +18,7 @@ const port = 4000;
        );
 
        // middleware
+       server.use(cors());
        server.use(express.json());
 
        server.use('/api/v2',usersRouter);
