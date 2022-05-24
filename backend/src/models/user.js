@@ -5,13 +5,9 @@ const userSchema = mongoose.Schema({
         type: String,
         required:true
     },
-age:{
-    type: Number,
-    required:true
-},
-email:{
-    type:String,
-    required:true
-}
-});
+    completed: {
+      type: Boolean,
+      required: true,
+    },
+  });
 module.exports = mongoose.model('user',userSchema);
